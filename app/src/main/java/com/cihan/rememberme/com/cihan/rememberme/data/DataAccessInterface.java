@@ -12,8 +12,7 @@ public interface DataAccessInterface {
 
 
     public List<WordExampleDTO> getWords();
-    public boolean addBook(WordExampleDTO word);
-    public boolean hasWords();
-    public WordExampleDTO getWord(String id);
+    public void addWord(WordExampleDTO word);
+    public WordExampleDTO getWord(int id);
     public void clearAll();
 }

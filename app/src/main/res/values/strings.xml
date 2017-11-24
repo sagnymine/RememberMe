@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">RememberMe</string>
+    <string name="learn_words">Learn Words</string>
+    <string name="add_new_word">Add New Word</string>
+    <string name="my_dictionary">My Dictionary</string>
+    <string name="word">Word</string>
+    <string name="description">Description</string>
+    <string name="example_sentence">Example Sentence (Optional)</string>
+    <string name="save">Save</string>
 </resources>

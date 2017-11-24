@@ -3,6 +3,7 @@ package com.cihan.rememberme.com.cihan.rememberme.model.realm;
 import com.cihan.rememberme.com.cihan.rememberme.model.dto.WordExampleDTO;
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 /**
  * Created by cihan.ozdiker on 23.11.2017.
@@ -11,12 +12,21 @@ import io.realm.RealmObject;
 
 public class WordExampleRealm extends RealmObject {
 
+    @PrimaryKey
+    private int wordId;
     private String word;
     private String definition;
     private String example_sentence;
     private int askCount;
     private int correctAnswerCount;
 
+    public int getWordId() {
+        return wordId;
+    }
+
+    public void setWordId(int wordId) {
+        this.wordId = wordId;
+    }
     public String getWord() {
         return word;
     }
@@ -58,13 +68,14 @@ public class WordExampleRealm extends RealmObject {
         this.correctAnswerCount = correctAnswerCount;
     }
 
-    public WordExampleRealm(WordExampleDTO wordExampleRealm) {
+    public WordExampleRealm(WordExampleDTO wordExampleDTO) {
 
-        this.word = wordExampleRealm.getWord();
-        this.definition = wordExampleRealm.getDefinition();
-        this.example_sentence = wordExampleRealm.getExampleSentence();
-        this.askCount = wordExampleRealm.getAskCount();
-        this.correctAnswerCount = wordExampleRealm.getCorrectAnswerCount();
+        this.word = wordExampleDTO.getWord();
+        this.definition = wordExampleDTO.getDefinition();
+        this.example_sentence = wordExampleDTO.getExampleSentence();
+        this.askCount = wordExampleDTO.getAskCount();
+        this.correctAnswerCount = wordExampleDTO.getCorrectAnswerCount();
+        this.wordId = wordExampleDTO.getWordId();
     }
     public WordExampleRealm(){
 

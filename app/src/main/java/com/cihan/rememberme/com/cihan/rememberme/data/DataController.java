@@ -27,9 +27,9 @@ public class DataController {
 
      }
 
-     public boolean addBook(WordExampleDTO word){
+     public void addWord(WordExampleDTO word){
 
-        return dataAccess.addBook(word);
+         dataAccess.addWord(word);
      }
 
     public void cleanDB(){
@@ -38,10 +38,8 @@ public class DataController {
     }
 
 
-    public boolean hasWords(){
-       return dataAccess.hasWords();
-    }
-    public WordExampleDTO getWord(String id){
+
+    public WordExampleDTO getWord(int id){
         return dataAccess.getWord(id);
     }
 

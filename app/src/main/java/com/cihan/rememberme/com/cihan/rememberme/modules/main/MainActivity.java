@@ -1,32 +1,41 @@
 package com.cihan.rememberme.com.cihan.rememberme.modules.main;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.cihan.rememberme.R;
 import com.cihan.rememberme.com.cihan.rememberme.data.DataAccessCreator;
 import com.cihan.rememberme.com.cihan.rememberme.data.DataAccessInterface;
-import com.cihan.rememberme.com.cihan.rememberme.data.DataController;
-import com.cihan.rememberme.com.cihan.rememberme.model.dto.WordExampleDTO;
-
-import java.util.List;
+import com.cihan.rememberme.com.cihan.rememberme.modules.addnewword.AddOrUpdateWordActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    DataAccessInterface dataAccess;
+    Button addNewWordBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        DataAccessCreator dataControllerCreator = new DataAccessCreator();
-        dataAccess = dataControllerCreator.GetDataAccess();
+        addNewWordBtn = (Button)findViewById(R.id.add_new_word_btn);
+        addNewWordBtn.setOnClickListener(addNewListener);
 
 
-        dataAccess.addBook(new WordExampleDTO("Yes","Evet","Yes it is!"));
-        List<WordExampleDTO> words =  dataAccess.getWords();
-        Log.i("hello","hello");
        
     }
+
+    private View.OnClickListener  addNewListener = new View.OnClickListener(){
+
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(MainActivity.this, AddOrUpdateWordActivity.class);
+            DataAccessCreator creator = new DataAccessCreator();
+
+            intent.putExtra("Word",creator.GetDataAccess().getWord(1));
+            startActivity(intent);
+
+        }
+    };
 }

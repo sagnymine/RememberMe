@@ -18,65 +18,83 @@ import io.realm.RealmResults;
 public class RealmController implements DataAccessInterface  {
 
     private static RealmController instance;
-    private final Realm realm;
-
-    public RealmController() {
-        realm = Realm.getDefaultInstance();
-    }
+    private Realm realm;
 
 
 
 
 
-
-
-    //Refresh the realm istance
     public void refresh() {
 
         realm.refresh();
     }
 
-    //clear all objects from Book.class
-    public void clearAll() {
-
-        realm.beginTransaction();
-        realm.clear(WordExampleRealm.class);
-        realm.commitTransaction();
+    private void close(){
+        realm.close();
     }
 
-    //find all objects in the Book.class
+    public void clearAll() {
+
+
+    }
+
     public List<WordExampleDTO> getWords() {
 
+        realm = Realm.getDefaultInstance();
         List<WordExampleDTO> words = new ArrayList<>();
         RealmResults<WordExampleRealm> results =  realm.where(WordExampleRealm.class).findAll();
 
-        Iterator<WordExampleRealm> iterator = results.iterator();
-        while(iterator.hasNext()) {
 
-            WordExampleRealm wordExampleRealm = iterator.next();
-            words.add(new WordExampleDTO(wordExampleRealm));
+
+        for(int i=0; i<results.size();i++) {
+
+
+            words.add(new WordExampleDTO(results.get(i)));
         }
+        realm.close();
         return words;
     }
 
-    //query a single item with the given id
-    public WordExampleDTO getWord(String id) {
+    public WordExampleDTO getWord(int id) {
 
-        WordExampleRealm wordRealm =  realm.where(WordExampleRealm.class).equalTo("id", id).findFirst();
-        return  new WordExampleDTO(wordRealm);
+        realm = Realm.getDefaultInstance();
+        WordExampleRealm wordRealm =  realm.where(WordExampleRealm.class).equalTo("wordId", id).findFirst();
+        if(wordRealm!=null){
+
+            return  new WordExampleDTO(wordRealm);
+        }
+        return null;
+
     }
 
-    //check if Book.class is empty
-    public boolean hasWords() {
 
-        return !realm.allObjects(WordExampleRealm.class).isEmpty();
-    }
-    public boolean addBook(WordExampleDTO word) {
+    public void addWord(WordExampleDTO word) {
+        realm = Realm.getDefaultInstance();
+        final WordExampleRealm wordExampleRealm = new WordExampleRealm(word);
+        if(wordExampleRealm.getWordId()==0) {
+            Number currentIdNum = realm.where(WordExampleRealm.class).max("wordId");
+            int nextId;
+            if (currentIdNum == null) {
+                nextId = 1;
+            } else {
+                nextId = currentIdNum.intValue() + 1;
+            }
+            wordExampleRealm.setWordId(nextId);
+        }
+        try {
+            realm.executeTransaction(new Realm.Transaction() {
+                @Override
+                public void execute(Realm realm) {
+                    realm.insertOrUpdate(wordExampleRealm);
+                }
+            });
+        } finally {
+            if(realm != null) {
+                realm.close();
+            }
+        }
 
 
-        realm.beginTransaction();
-        realm.copyToRealm(new WordExampleRealm(word));
-        realm.commitTransaction();
-        return true;
+
     }
 }
