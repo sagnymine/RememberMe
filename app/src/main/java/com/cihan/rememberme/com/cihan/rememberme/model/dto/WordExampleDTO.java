@@ -1,14 +1,18 @@
 package com.cihan.rememberme.com.cihan.rememberme.model.dto;
 
-import lombok.Getter;
+import com.cihan.rememberme.com.cihan.rememberme.model.realm.WordExampleRealm;
+
+
 
 /**
  * Created by cihan.ozdiker on 23.11.2017.
  */
 
-@Getter
-public class WordExampleDAO {
+public class WordExampleDTO {
 
+    public WordExampleDTO(){
+
+    }
     public String getWord() {
         return word;
     }
@@ -25,22 +29,46 @@ public class WordExampleDAO {
         this.definition = definition;
     }
 
-    public String getExample_sentence() {
-        return example_sentence;
+    public String getExampleSentence() {
+        return exampleSentence;
     }
 
-    public void setExample_sentence(String example_sentence) {
-        this.example_sentence = example_sentence;
+    public void setExampleSentence(String exampleSentence) {
+        this.exampleSentence = exampleSentence;
     }
 
     private String word;
     private String definition;
-    private String example_sentence;
+    private String exampleSentence;
+    private int askCount;
+    private int correctAnswerCount;
 
-    public WordExampleDAO(WordExampleInterface wordExampleInterface) {
-        this.word = wordExampleInterface.;
-        this.definition = wordExampleInterface.getDefinition();
-        this.example_sentence = wordExampleInterface.getExample_sentence();
+    public int getAskCount() {
+        return askCount;
     }
 
+    public void setAskCount(int askCount) {
+        this.askCount = askCount;
+    }
+
+    public int getCorrectAnswerCount() {
+        return correctAnswerCount;
+    }
+
+    public void setCorrectAnswerCount(int correctAnswerCount) {
+        this.correctAnswerCount = correctAnswerCount;
+    }
+
+
+    public WordExampleDTO(WordExampleRealm wordExampleRealm) {
+        this.word = wordExampleRealm.getWord();
+        this.definition = wordExampleRealm.getDefinition();
+        this.exampleSentence = wordExampleRealm.getExample_sentence();
+    }
+
+    public WordExampleDTO(String word, String definition, String example_sentence){
+        this.word = word;
+        this.definition = definition;
+        this.exampleSentence = example_sentence;
+    }
 }
