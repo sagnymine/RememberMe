@@ -1,7 +1,12 @@
 package com.cihan.rememberme.com.cihan.rememberme.modules.addnewword;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,7 +23,7 @@ public class AddOrUpdateWordActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        presenter = new AddOrUpdateWordPresenter();
+        presenter = new AddOrUpdateWordPresenter(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_word);
         wordText = (EditText)findViewById(R.id.wordText);
@@ -64,4 +69,43 @@ public class AddOrUpdateWordActivity extends AppCompatActivity {
             }
         }
     };
+
+    public void showWordAlert(){
+        AlertDialog.Builder builder;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
+        } else {
+            builder = new AlertDialog.Builder(this);
+        }
+
+        if(getIntent().hasExtra("Word")){
+            builder.setTitle("Update")
+                    .setMessage("Word updated successfully")
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+
+                            Intent resultIntent = new Intent();
+                            resultIntent.putExtra("Updated", true);
+                            setResult(Activity.RESULT_OK, resultIntent);
+                            finish();
+
+                        }
+                    })
+
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
+        }else{
+            builder.setTitle("Add")
+                    .setMessage("Word added successfully")
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    })
+
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
+        }
+
+    }
 }

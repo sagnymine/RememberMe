@@ -1,8 +1,6 @@
 package com.cihan.rememberme.com.cihan.rememberme.data;
 
 import com.cihan.rememberme.com.cihan.rememberme.model.dto.WordExampleDTO;
-import com.cihan.rememberme.com.cihan.rememberme.model.realm.WordExampleRealm;
-import com.cihan.rememberme.com.cihan.rememberme.realm.RealmController;
 
 import java.util.List;
 

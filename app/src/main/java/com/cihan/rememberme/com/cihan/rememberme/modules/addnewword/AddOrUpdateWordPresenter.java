@@ -1,7 +1,5 @@
 package com.cihan.rememberme.com.cihan.rememberme.modules.addnewword;
 
-import android.util.Log;
-
 import com.cihan.rememberme.com.cihan.rememberme.data.DataAccessCreator;
 import com.cihan.rememberme.com.cihan.rememberme.data.DataAccessInterface;
 import com.cihan.rememberme.com.cihan.rememberme.model.dto.WordExampleDTO;
@@ -15,15 +13,19 @@ import java.util.List;
 public class AddOrUpdateWordPresenter {
 
     DataAccessInterface dataAccess;
-
-    public AddOrUpdateWordPresenter(){
+    AddOrUpdateWordActivity mActivity;
+    public AddOrUpdateWordPresenter(AddOrUpdateWordActivity activity){
         DataAccessCreator dataControllerCreator = new DataAccessCreator();
         dataAccess = dataControllerCreator.GetDataAccess();
+        mActivity = activity;
     }
     public void saveWord(WordExampleDTO word){
 
         dataAccess.addWord(word);
         List<WordExampleDTO> words =  dataAccess.getWords();
-        Log.i("Word Log","count: "+ words.size());
+        mActivity.showWordAlert();
+
     }
+
+
 }
