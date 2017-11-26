@@ -14,7 +14,7 @@ import android.widget.EditText;
 import com.cihan.rememberme.R;
 import com.cihan.rememberme.model.dto.WordExampleDTO;
 
-public class AddOrUpdateWordActivity extends AppCompatActivity {
+public class AddOrUpdateWordActivity extends AppCompatActivity implements AddOrUpdateView {
 
     private EditText wordText,sentenceText, definitionText;
     private Button saveButton;

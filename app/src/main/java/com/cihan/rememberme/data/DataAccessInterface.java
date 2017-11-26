@@ -14,5 +14,6 @@ public interface DataAccessInterface {
     public List<WordExampleDTO> getWords();
     public void addWord(WordExampleDTO word);
     public WordExampleDTO getWord(int id);
+    public void removeWord(int wordId);
     public void clearAll();
 }

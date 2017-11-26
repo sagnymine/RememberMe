@@ -59,11 +59,32 @@ public class RealmController implements DataAccessInterface  {
         WordExampleRealm wordRealm =  realm.where(WordExampleRealm.class).equalTo("wordId", id).findFirst();
         if(wordRealm!=null){
 
-            return  new WordExampleDTO(wordRealm);
+            WordExampleDTO wordExampleDTO = new WordExampleDTO(wordRealm);
+            realm.close();
+            return  wordExampleDTO;
         }
         return null;
 
     }
+
+    public void removeWord(final int wordId){
+        realm = Realm.getDefaultInstance();
+
+
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                WordExampleRealm wordRealm =  realm.where(WordExampleRealm.class).equalTo("wordId", wordId).findFirst();
+                if(wordRealm!=null){
+
+                    wordRealm.deleteFromRealm();
+
+                }
+            }
+        });
+    }
+
+
 
 
     public void addWord(WordExampleDTO word) {

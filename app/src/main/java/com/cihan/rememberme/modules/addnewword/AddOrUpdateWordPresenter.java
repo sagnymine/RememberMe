@@ -10,20 +10,21 @@ import java.util.List;
  * Created by cihan.ozdiker on 23.11.2017.
  */
 
-public class AddOrUpdateWordPresenter {
+public class AddOrUpdateWordPresenter  {
 
     DataAccessInterface dataAccess;
-    AddOrUpdateWordActivity mActivity;
-    public AddOrUpdateWordPresenter(AddOrUpdateWordActivity activity){
+    AddOrUpdateView view;
+    public AddOrUpdateWordPresenter(AddOrUpdateView view){
+        this.view = view;
         DataAccessCreator dataControllerCreator = new DataAccessCreator();
         dataAccess = dataControllerCreator.GetDataAccess();
-        mActivity = activity;
+
     }
     public void saveWord(WordExampleDTO word){
 
         dataAccess.addWord(word);
         List<WordExampleDTO> words =  dataAccess.getWords();
-        mActivity.showWordAlert();
+        view.showWordAlert();
 
     }
 
