@@ -1,4 +1,4 @@
-package com.cihan.rememberme.com.cihan.rememberme.app;
+package com.cihan.rememberme.app;
 
 import android.app.Application;
 

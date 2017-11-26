@@ -1,8 +1,8 @@
-package com.cihan.rememberme.com.cihan.rememberme.modules.addnewword;
+package com.cihan.rememberme.modules.addnewword;
 
-import com.cihan.rememberme.com.cihan.rememberme.data.DataAccessCreator;
-import com.cihan.rememberme.com.cihan.rememberme.data.DataAccessInterface;
-import com.cihan.rememberme.com.cihan.rememberme.model.dto.WordExampleDTO;
+import com.cihan.rememberme.data.DataAccessCreator;
+import com.cihan.rememberme.data.DataAccessInterface;
+import com.cihan.rememberme.model.dto.WordExampleDTO;
 
 import java.util.List;
 

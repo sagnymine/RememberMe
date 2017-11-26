@@ -1,6 +1,6 @@
-package com.cihan.rememberme.com.cihan.rememberme.model.realm;
+package com.cihan.rememberme.model.realm;
 
-import com.cihan.rememberme.com.cihan.rememberme.model.dto.WordExampleDTO;
+import com.cihan.rememberme.model.dto.WordExampleDTO;
 
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;

@@ -1,6 +1,4 @@
-package com.cihan.rememberme.com.cihan.rememberme.data;
-
-import com.cihan.rememberme.com.cihan.rememberme.realm.RealmController;
+package com.cihan.rememberme.data;
 
 /**
  * Created by cihan.ozdiker on 24.11.2017.

@@ -1,9 +1,9 @@
-package com.cihan.rememberme.com.cihan.rememberme.model.dto;
+package com.cihan.rememberme.model.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.cihan.rememberme.com.cihan.rememberme.model.realm.WordExampleRealm;
+import com.cihan.rememberme.model.realm.WordExampleRealm;
 
 
 

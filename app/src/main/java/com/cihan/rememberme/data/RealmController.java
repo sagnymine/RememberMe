@@ -1,11 +1,9 @@
-package com.cihan.rememberme.com.cihan.rememberme.realm;
+package com.cihan.rememberme.data;
 
-import com.cihan.rememberme.com.cihan.rememberme.data.DataAccessInterface;
-import com.cihan.rememberme.com.cihan.rememberme.model.dto.WordExampleDTO;
-import com.cihan.rememberme.com.cihan.rememberme.model.realm.WordExampleRealm;
+import com.cihan.rememberme.model.dto.WordExampleDTO;
+import com.cihan.rememberme.model.realm.WordExampleRealm;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import io.realm.Realm;

@@ -1,4 +1,4 @@
-package com.cihan.rememberme.com.cihan.rememberme.modules.wordlist;
+package com.cihan.rememberme.modules.wordlist;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.cihan.rememberme.R;
-import com.cihan.rememberme.com.cihan.rememberme.model.dto.WordExampleDTO;
+import com.cihan.rememberme.model.dto.WordExampleDTO;
 
 import java.util.List;
 

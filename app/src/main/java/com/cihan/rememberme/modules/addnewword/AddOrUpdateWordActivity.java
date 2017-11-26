@@ -1,4 +1,4 @@
-package com.cihan.rememberme.com.cihan.rememberme.modules.addnewword;
+package com.cihan.rememberme.modules.addnewword;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.cihan.rememberme.R;
-import com.cihan.rememberme.com.cihan.rememberme.model.dto.WordExampleDTO;
+import com.cihan.rememberme.model.dto.WordExampleDTO;
 
 public class AddOrUpdateWordActivity extends AppCompatActivity {
 
@@ -23,8 +23,8 @@ public class AddOrUpdateWordActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        presenter = new AddOrUpdateWordPresenter(this);
         super.onCreate(savedInstanceState);
+        presenter = new AddOrUpdateWordPresenter(this);
         setContentView(R.layout.activity_add_new_word);
         wordText = (EditText)findViewById(R.id.wordText);
         definitionText = (EditText)findViewById(R.id.definitionText);

@@ -1,10 +1,10 @@
-package com.cihan.rememberme.com.cihan.rememberme.modules.wordlist;
+package com.cihan.rememberme.modules.wordlist;
 
 import android.speech.tts.TextToSpeech;
 
-import com.cihan.rememberme.com.cihan.rememberme.data.DataAccessCreator;
-import com.cihan.rememberme.com.cihan.rememberme.data.DataAccessInterface;
-import com.cihan.rememberme.com.cihan.rememberme.model.dto.WordExampleDTO;
+import com.cihan.rememberme.data.DataAccessCreator;
+import com.cihan.rememberme.data.DataAccessInterface;
+import com.cihan.rememberme.model.dto.WordExampleDTO;
 
 import java.util.List;
 import java.util.Locale;

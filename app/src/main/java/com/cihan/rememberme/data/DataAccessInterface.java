@@ -1,6 +1,6 @@
-package com.cihan.rememberme.com.cihan.rememberme.data;
+package com.cihan.rememberme.data;
 
-import com.cihan.rememberme.com.cihan.rememberme.model.dto.WordExampleDTO;
+import com.cihan.rememberme.model.dto.WordExampleDTO;
 
 import java.util.List;
 
