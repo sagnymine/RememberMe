@@ -1,4 +1,4 @@
-package com.cihan.rememberme.modules.addnewword;
+package com.cihan.rememberme.module.addnewword;
 
 import android.app.Activity;
 import android.content.DialogInterface;

@@ -1,4 +1,4 @@
-package com.cihan.rememberme.modules.addnewword;
+package com.cihan.rememberme.module.addnewword;
 
 /**
  * Created by cihan on 11/26/17.

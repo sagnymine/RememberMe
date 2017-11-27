@@ -1,4 +1,4 @@
-package com.cihan.rememberme.modules.addnewword;
+package com.cihan.rememberme.module.addnewword;
 
 import com.cihan.rememberme.data.DataAccessCreator;
 import com.cihan.rememberme.data.DataAccessInterface;

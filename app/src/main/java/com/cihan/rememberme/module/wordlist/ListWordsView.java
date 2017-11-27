@@ -1,4 +1,4 @@
-package com.cihan.rememberme.modules.wordlist;
+package com.cihan.rememberme.module.wordlist;
 
 /**
  * Created by cihan on 11/26/17.

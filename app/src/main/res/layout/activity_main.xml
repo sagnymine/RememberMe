@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="@color/colorPrimary"
     android:weightSum="3"
-    tools:context=".modules.main.MainActivity">
+    tools:context=".module.main.MainActivity">
 
     <Button
         android:layout_width="match_parent"

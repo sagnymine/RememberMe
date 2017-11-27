@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorPrimary"
-    tools:context=".modules.wordlist.ListWordsActivity">
+    tools:context=".module.wordlist.ListWordsActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/wordsContainerRV"

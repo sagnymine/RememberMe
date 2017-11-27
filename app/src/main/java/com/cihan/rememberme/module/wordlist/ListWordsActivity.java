@@ -1,4 +1,4 @@
-package com.cihan.rememberme.modules.wordlist;
+package com.cihan.rememberme.module.wordlist;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -16,7 +16,7 @@ import android.view.View;
 
 import com.cihan.rememberme.R;
 import com.cihan.rememberme.model.dto.WordExampleDTO;
-import com.cihan.rememberme.modules.addnewword.AddOrUpdateWordActivity;
+import com.cihan.rememberme.module.addnewword.AddOrUpdateWordActivity;
 
 import java.util.List;
 import java.util.Locale;

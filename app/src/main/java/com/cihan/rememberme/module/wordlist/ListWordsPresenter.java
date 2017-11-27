@@ -1,4 +1,4 @@
-package com.cihan.rememberme.modules.wordlist;
+package com.cihan.rememberme.module.wordlist;
 
 import com.cihan.rememberme.data.DataAccessCreator;
 import com.cihan.rememberme.data.DataAccessInterface;

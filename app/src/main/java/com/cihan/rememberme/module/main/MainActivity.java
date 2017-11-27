@@ -1,4 +1,4 @@
-package com.cihan.rememberme.modules.main;
+package com.cihan.rememberme.module.main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.cihan.rememberme.R;
-import com.cihan.rememberme.modules.addnewword.AddOrUpdateWordActivity;
-import com.cihan.rememberme.modules.wordlist.ListWordsActivity;
+import com.cihan.rememberme.module.addnewword.AddOrUpdateWordActivity;
+import com.cihan.rememberme.module.wordlist.ListWordsActivity;
 
 public class MainActivity extends AppCompatActivity {
 
