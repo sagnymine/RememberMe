@@ -29,7 +29,7 @@ Uygulama, indirdiği sözcük listeleri veya kendi sözlüğü üzerinden çevri
 
 
 
-## 3 - Kullanılan ve Kullanılacak 3üncü parti kütüphaneler.
+## 3 - Kullanılan ve Kullanılacak 3üncü Parti Kütüphaneler.
 
 
 #### Realm
@@ -55,4 +55,24 @@ Test edilebilir bir kod ortaya çıkarmak için dependency injection yapmak gere
 #### Butterknife
 
 View injection için kullanılacaktır. 
+
+
+
+## 4 - Teknik Detaylar ve Akış
+
+Projede MVP mimarisi kullanılmıştır. Yani yaratılacak her activity için **module** altına o activity için bir package ve o package'ın presenterı da yaratılacaktır. 
+
+Data altındaki RealmController database işlemlerinin gerçekleştiği modüldür. Presenterlar data alışverişi için doğrudan DataAccessInterface'i kullanacaklardır. Database değişikliği olması durumunda DataAccessCreator'ın yeni Database controller'ı dönmesi sağlanacaktır. Activity ve Presenter classları içinde DB kodu bulundurulmayarak bağımlılık kaldırılmıştır.
+
+Model altında Database objeleriyle Data Transfer Objeleri birbirinden ayrılmıştır.
+
+## 5 - Proje Durumu
+
+- [x] Sözcük ekleme ve düzenleme
+- [x] Kendi sözcüklerini görüntüleme
+- [ ] Hazır sözcükleri görüntüleme ve indirme
+- [ ] Bir sözcük listesiyle egzersiz yapma
+
+
+
 
