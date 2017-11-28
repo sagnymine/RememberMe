@@ -56,6 +56,10 @@ Test edilebilir bir kod ortaya çıkarmak için dependency injection yapmak gere
 
 View injection için kullanılacaktır. 
 
+#### Gson
+
+Serverdan gelecek json sözcük datasını kullanılacak nesnelere çevirmek için kullanılacaktır. 
+
 
 
 ## 4 - Teknik Detaylar ve Akış
@@ -65,6 +69,8 @@ Projede MVP mimarisi kullanılmıştır. Yani yaratılacak her activity için **
 Data altındaki RealmController database işlemlerinin gerçekleştiği modüldür. Presenterlar data alışverişi için doğrudan DataAccessInterface'i kullanacaklardır. Database değişikliği olması durumunda DataAccessCreator'ın yeni Database controller'ı dönmesi sağlanacaktır. Activity ve Presenter classları içinde DB kodu bulundurulmayarak bağımlılık kaldırılmıştır.
 
 Model altında Database objeleriyle Data Transfer Objeleri birbirinden ayrılmıştır.
+
+Servisler Node.js ile yazılacaktır. Database olarak MongoDB kullanılacaktır. Dataları saklamak için ilişkisel veritabanına ihtiyacımız olmadığı için NoSQL bir DB seçilmiştir. 
 
 ## 5 - Proje Durumu
 
