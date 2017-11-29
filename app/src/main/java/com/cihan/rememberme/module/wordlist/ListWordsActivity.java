@@ -16,12 +16,14 @@ import android.view.View;
 
 import com.cihan.rememberme.R;
 import com.cihan.rememberme.model.dto.WordExampleDTO;
+import com.cihan.rememberme.module.adapter.WordAdapter;
+import com.cihan.rememberme.module.adapter.WordView;
 import com.cihan.rememberme.module.addnewword.AddOrUpdateWordActivity;
 
 import java.util.List;
 import java.util.Locale;
 
-public class ListWordsActivity extends AppCompatActivity implements ListWordsView{
+public class ListWordsActivity extends AppCompatActivity implements ListWordsView,WordView {
 
     private RecyclerView recyclerView;
     private WordAdapter adapter;

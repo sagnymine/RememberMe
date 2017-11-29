@@ -24,7 +24,9 @@
             android:name=".module.addnewword.AddOrUpdateWordActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
-        <activity android:name=".module.wordlist.ListWordsActivity"></activity>
+        <activity android:name=".module.wordlist.ListWordsActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

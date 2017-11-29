@@ -1,6 +1,5 @@
-package com.cihan.rememberme.module.wordlist;
+package com.cihan.rememberme.module.adapter;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +9,7 @@ import android.widget.TextView;
 
 import com.cihan.rememberme.R;
 import com.cihan.rememberme.model.dto.WordExampleDTO;
+import com.cihan.rememberme.module.wordlist.ListWordsActivity;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ import java.util.List;
  */
 
 public class WordAdapter extends RecyclerView.Adapter {
-    private Context mContext;
+    private WordView wordView;
     private List<WordExampleDTO> words;
 
 
@@ -40,15 +40,15 @@ public class WordAdapter extends RecyclerView.Adapter {
             soundButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    ((ListWordsActivity)view.getContext()).speakText(words.get(getAdapterPosition()).getWord());
+                    wordView.speakText(words.get(getAdapterPosition()).getWord());
                 }
             });
 
         }
     }
 
-    public WordAdapter(Context mContext, List<WordExampleDTO> words) {
-        this.mContext = mContext;
+    public WordAdapter(WordView wordView, List<WordExampleDTO> words) {
+        this.wordView = wordView;
         this.words = words;
     }
 
